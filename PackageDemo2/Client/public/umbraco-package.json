@@ -1,0 +1,14 @@
+{
+  "id": "PackageDemo2",
+  "name": "PackageDemo2",
+  "version": "0.0.0",
+  "allowPackageTelemetry": true,
+  "extensions": [
+    {
+      "name": "Package Demo 2Bundle",
+      "alias": "PackageDemo2.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/PackageDemo2/package-demo-2.js"
+    }
+  ]
+}
