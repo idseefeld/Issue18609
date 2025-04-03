@@ -43,6 +43,8 @@ export class ExampleDashboardElement extends UmbElementMixin(LitElement) {
   #onClickWhoAmI = async (ev: Event) => {
     const buttonElement = ev.target as UUIButtonElement;
     buttonElement.state = "waiting";
+    debugger;
+    
 
     const { data, error } = await PackageDemo1Service.whoAmI();
 
@@ -60,8 +62,8 @@ export class ExampleDashboardElement extends UmbElementMixin(LitElement) {
     if (this.#notificationContext) {
       this.#notificationContext.peek("warning", {
         data: {
-          headline: `You are ${this._serverUserData?.name}`,
-          message: `Your email is ${this._serverUserData?.email}`,
+          headline: `Dashboard 1: You are ${this._serverUserData?.name}`,
+          message: `Dashboard 1: Your email is ${this._serverUserData?.email}`,
         }
       })
     }
@@ -104,14 +106,14 @@ export class ExampleDashboardElement extends UmbElementMixin(LitElement) {
 
   render() {
     return html`
-        <uui-box headline="Who am I?">
+        <uui-box headline="Dashboard 1: Who am I?">
             <div slot="header">[Server]</div>
             <h2><uui-icon name="icon-user"></uui-icon>${this._serverUserData?.email ? this._serverUserData.email : 'Press the button!'}</h2>
             <ul>
                 ${this._serverUserData?.groups.map(group => html`<li>${group.name}</li>`)}
             </ul>
             <uui-button color="default" look="primary" @click="${this.#onClickWhoAmI}">
-                Who am I?
+            Dashboard 1: Who am I?
             </uui-button>
             <p>This endpoint gets your current user from the server and displays your email and list of user groups.
             It also displays a Notification with your details.</p>
