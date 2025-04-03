@@ -3,17 +3,17 @@ const a = [
     name: "Package Demo 2Entrypoint",
     alias: "PackageDemo2.Entrypoint",
     type: "backofficeEntryPoint",
-    js: () => import("./entrypoint-DktUUwaR.js")
+    js: () => import("./entrypoint-C1IergUU.js")
   }
-], e = [
+], t = [
   {
     name: "Package Demo 2Dashboard",
     alias: "PackageDemo2.Dashboard",
     type: "dashboard",
-    js: () => import("./dashboard.element-7qIVyFa8.js"),
+    js: () => import("./pack2dashboard.element-7RDhcqZQ.js"),
     meta: {
-      label: "Example Dashboard",
-      pathname: "example-dashboard"
+      label: "Pack 2",
+      pathname: "pack-2-dashboard"
     },
     conditions: [
       {
@@ -24,7 +24,7 @@ const a = [
   }
 ], o = [
   ...a,
-  ...e
+  ...t
 ];
 export {
   o as manifests

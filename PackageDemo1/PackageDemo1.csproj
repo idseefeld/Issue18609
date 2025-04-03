@@ -31,10 +31,12 @@
   
   <ItemGroup>
     <!-- Dont include the client folder as part of packaging nuget build -->
+    <Compile Remove="Client\**" />
     <Content Remove="Client\**" />
+    <EmbeddedResource Remove="Client\**" />
+    <None Remove="Client\**" />
 
     <!-- However make the Umbraco-package.json included for dotnet pack or nuget package and visible to the solution -->
-    <None Include="Client\public\umbraco-package.json" Pack="false" />
   </ItemGroup>
 
 </Project>

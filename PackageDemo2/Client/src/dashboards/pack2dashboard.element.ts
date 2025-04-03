@@ -5,8 +5,9 @@ import { UUIButtonElement } from "@umbraco-cms/backoffice/external/uui";
 import { UMB_NOTIFICATION_CONTEXT, UmbNotificationContext } from "@umbraco-cms/backoffice/notification";
 import { UMB_CURRENT_USER_CONTEXT, UmbCurrentUserModel } from "@umbraco-cms/backoffice/current-user";
 
-@customElement('example-dashboard')
-export class ExampleDashboardElement extends UmbElementMixin(LitElement) {
+const elementName = 'pack-2-dashbord';
+@customElement(elementName)
+export class Pack2DashboardElement extends UmbElementMixin(LitElement) {
 
   @state()
   private _yourName: string | undefined = "Press the button!";
@@ -169,10 +170,10 @@ export class ExampleDashboardElement extends UmbElementMixin(LitElement) {
     `];
 }
 
-export default ExampleDashboardElement;
+export default Pack2DashboardElement;
 
 declare global {
   interface HTMLElementTagNameMap {
-    'example-dashboard': ExampleDashboardElement;
+    [elementName]: Pack2DashboardElement;
   }
 }

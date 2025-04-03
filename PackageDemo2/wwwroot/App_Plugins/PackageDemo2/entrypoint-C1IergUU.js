@@ -1,7 +1,7 @@
 import { UMB_AUTH_CONTEXT as c } from "@umbraco-cms/backoffice/auth";
 import { c as t } from "./services.gen-DG6do2Ia.js";
 const g = (e, s) => {
-  console.log("Hello from my extension 🎉"), e.consumeContext(c, async (i) => {
+  console.log("Hello from my extension 2 🎉"), e.consumeContext(c, async (i) => {
     const o = i.getOpenApiConfiguration();
     t.setConfig({
       baseUrl: o.base,
@@ -12,10 +12,10 @@ const g = (e, s) => {
     });
   });
 }, f = (e, s) => {
-  console.log("Goodbye from my extension 👋");
+  console.log("Goodbye from my extension 2 👋");
 };
 export {
   g as onInit,
   f as onUnload
 };
-//# sourceMappingURL=entrypoint-DktUUwaR.js.map
+//# sourceMappingURL=entrypoint-C1IergUU.js.map

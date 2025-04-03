@@ -3,10 +3,10 @@ export const manifests: Array<UmbExtensionManifest> = [
     name: "Package Demo 2Dashboard",
     alias: "PackageDemo2.Dashboard",
     type: 'dashboard',
-    js: () => import("./dashboard.element"),
+    js: () => import("./pack2dashboard.element"),
     meta: {
-      label: "Example Dashboard",
-      pathname: "example-dashboard"
+      label: "Pack 2",
+      pathname: "pack-2-dashboard"
     },
     conditions: [
       {

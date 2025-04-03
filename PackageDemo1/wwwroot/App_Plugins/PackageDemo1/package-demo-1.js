@@ -5,15 +5,15 @@ const a = [
     type: "backofficeEntryPoint",
     js: () => import("./entrypoint-BJ6uh-6g.js")
   }
-], e = [
+], t = [
   {
     name: "Package Demo 1Dashboard",
     alias: "PackageDemo1.Dashboard",
     type: "dashboard",
-    js: () => import("./dashboard.element-CqixEdDx.js"),
+    js: () => import("./pack1dashboard.element-CrkDNGUV.js"),
     meta: {
-      label: "Example Dashboard",
-      pathname: "example-dashboard"
+      label: "Pack 1",
+      pathname: "pack-1-dashboard"
     },
     conditions: [
       {
@@ -24,7 +24,7 @@ const a = [
   }
 ], o = [
   ...a,
-  ...e
+  ...t
 ];
 export {
   o as manifests

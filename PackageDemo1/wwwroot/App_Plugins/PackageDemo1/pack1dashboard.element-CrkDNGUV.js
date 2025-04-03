@@ -1,21 +1,23 @@
-import { LitElement as g, html as f, css as w, state as c, customElement as x } from "@umbraco-cms/backoffice/external/lit";
-import { UmbElementMixin as C } from "@umbraco-cms/backoffice/element-api";
-import { P as d } from "./services.gen-DG6do2Ia.js";
+import { LitElement as g, html as f, css as w, state as c, customElement as C } from "@umbraco-cms/backoffice/external/lit";
+import { UmbElementMixin as x } from "@umbraco-cms/backoffice/element-api";
+import { P as d } from "./services.gen-zSYqYEKH.js";
 import { UMB_NOTIFICATION_CONTEXT as U } from "@umbraco-cms/backoffice/notification";
 import { UMB_CURRENT_USER_CONTEXT as W } from "@umbraco-cms/backoffice/current-user";
-var T = Object.defineProperty, E = Object.getOwnPropertyDescriptor, y = (t) => {
+var T = Object.defineProperty, k = Object.getOwnPropertyDescriptor, b = (t) => {
   throw TypeError(t);
-}, l = (t, e, r, a) => {
-  for (var i = a > 1 ? void 0 : a ? E(e, r) : e, s = t.length - 1, m; s >= 0; s--)
-    (m = t[s]) && (i = (a ? m(e, r, i) : m(i)) || i);
-  return a && i && T(e, r, i), i;
-}, b = (t, e, r) => e.has(t) || y("Cannot " + r), n = (t, e, r) => (b(t, e, "read from private field"), r ? r.call(t) : e.get(t)), h = (t, e, r) => e.has(t) ? y("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, r), M = (t, e, r, a) => (b(t, e, "write to private field"), e.set(t, r), r), u, p, _, v;
-let o = class extends C(g) {
+}, h = (t, e, r, a) => {
+  for (var o = a > 1 ? void 0 : a ? k(e, r) : e, s = t.length - 1, m; s >= 0; s--)
+    (m = t[s]) && (o = (a ? m(e, r, o) : m(o)) || o);
+  return a && o && T(e, r, o), o;
+}, y = (t, e, r) => e.has(t) || b("Cannot " + r), n = (t, e, r) => (y(t, e, "read from private field"), r ? r.call(t) : e.get(t)), l = (t, e, r) => e.has(t) ? b("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, r), D = (t, e, r, a) => (y(t, e, "write to private field"), e.set(t, r), r), u, p, _, v;
+const N = "pack-1-dashbord";
+let i = class extends x(g) {
   constructor() {
-    super(), this._yourName = "Press the button!", this._serverUserData = void 0, this._contextCurrentUser = void 0, h(this, u), h(this, p, async (t) => {
-      var i, s;
+    super(), this._yourName = "Press the button!", this._serverUserData = void 0, this._contextCurrentUser = void 0, l(this, u), l(this, p, async (t) => {
+      var o, s;
       const e = t.target;
       e.state = "waiting";
+      debugger;
       const { data: r, error: a } = await d.whoAmI();
       if (a) {
         e.state = "failed", console.error(a);
@@ -23,11 +25,11 @@ let o = class extends C(g) {
       }
       r !== void 0 && (this._serverUserData = r, e.state = "success"), n(this, u) && n(this, u).peek("warning", {
         data: {
-          headline: `You are ${(i = this._serverUserData) == null ? void 0 : i.name}`,
-          message: `Your email is ${(s = this._serverUserData) == null ? void 0 : s.email}`
+          headline: `Dashboard 1: You are ${(o = this._serverUserData) == null ? void 0 : o.name}`,
+          message: `Dashboard 1: Your email is ${(s = this._serverUserData) == null ? void 0 : s.email}`
         }
       });
-    }), h(this, _, async (t) => {
+    }), l(this, _, async (t) => {
       const e = t.target;
       e.state = "waiting";
       const { data: r, error: a } = await d.whatsTheTimeMrWolf();
@@ -36,7 +38,7 @@ let o = class extends C(g) {
         return;
       }
       r !== void 0 && (this._timeFromMrWolf = new Date(r), e.state = "success");
-    }), h(this, v, async (t) => {
+    }), l(this, v, async (t) => {
       const e = t.target;
       e.state = "waiting";
       const { data: r, error: a } = await d.whatsMyName();
@@ -46,7 +48,7 @@ let o = class extends C(g) {
       }
       this._yourName = r, e.state = "success";
     }), this.consumeContext(U, (t) => {
-      M(this, u, t);
+      D(this, u, t);
     }), this.consumeContext(W, (t) => {
       this.observe(t.currentUser, (e) => {
         this._contextCurrentUser = e;
@@ -56,14 +58,14 @@ let o = class extends C(g) {
   render() {
     var t, e, r;
     return f`
-        <uui-box headline="Who am I?">
+        <uui-box headline="Dashboard 1: Who am I?">
             <div slot="header">[Server]</div>
             <h2><uui-icon name="icon-user"></uui-icon>${(t = this._serverUserData) != null && t.email ? this._serverUserData.email : "Press the button!"}</h2>
             <ul>
                 ${(e = this._serverUserData) == null ? void 0 : e.groups.map((a) => f`<li>${a.name}</li>`)}
             </ul>
             <uui-button color="default" look="primary" @click="${n(this, p)}">
-                Who am I?
+            Dashboard 1: Who am I?
             </uui-button>
             <p>This endpoint gets your current user from the server and displays your email and list of user groups.
             It also displays a Notification with your details.</p>
@@ -100,7 +102,7 @@ u = /* @__PURE__ */ new WeakMap();
 p = /* @__PURE__ */ new WeakMap();
 _ = /* @__PURE__ */ new WeakMap();
 v = /* @__PURE__ */ new WeakMap();
-o.styles = [
+i.styles = [
   w`
             :host {
                 display: grid;
@@ -122,24 +124,24 @@ o.styles = [
             }
     `
 ];
-l([
+h([
   c()
-], o.prototype, "_yourName", 2);
-l([
+], i.prototype, "_yourName", 2);
+h([
   c()
-], o.prototype, "_timeFromMrWolf", 2);
-l([
+], i.prototype, "_timeFromMrWolf", 2);
+h([
   c()
-], o.prototype, "_serverUserData", 2);
-l([
+], i.prototype, "_serverUserData", 2);
+h([
   c()
-], o.prototype, "_contextCurrentUser", 2);
-o = l([
-  x("example-dashboard")
-], o);
-const S = o;
+], i.prototype, "_contextCurrentUser", 2);
+i = h([
+  C(N)
+], i);
+const S = i;
 export {
-  o as ExampleDashboardElement,
+  i as Pack1DashboardElement,
   S as default
 };
-//# sourceMappingURL=dashboard.element-7qIVyFa8.js.map
+//# sourceMappingURL=pack1dashboard.element-CrkDNGUV.js.map
